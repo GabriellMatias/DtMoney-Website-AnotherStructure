@@ -1,0 +1,22 @@
+{
+  "transactions":[
+    {
+    "id": 1,
+    "description": "Site Developer",
+    "type" : "income",
+    "category": "Sell",
+    "price": 12000,
+    "createdAt": "2022-11-28T12:02:03.356Z"
+    },
+    {
+      "id": 2,
+      "description": "Hamburguer",
+      "type" : "outcome",
+      "category": "Foods",
+      "price": 50,
+      "createdAt": "2022-11-28T12:02:03.356Z"
+      }
+
+  ]
+
+}
