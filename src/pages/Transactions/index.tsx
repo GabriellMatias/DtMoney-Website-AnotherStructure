@@ -3,6 +3,7 @@ import { Header } from "../../Components/Header";
 import { Summary } from "../../Components/Summary";
 import { TransactionContext } from "../../contexts/TransactionContext";
 import { api } from "../../services/api";
+import { dateFormatter, priceFormatter } from "../../utils/formatter";
 import { SearchForm } from "./Components/SearchForm";
 import {
   PriceHightLight,
@@ -28,11 +29,13 @@ export function Transactions() {
                   <td width="50%">{transaction.description}</td>
                   <td>
                     <PriceHightLight variant={transaction.type}>
-                      R$ {transaction.price}
+                      {transaction.type === 'outcome' && '- '}
+                      {priceFormatter.format(transaction.price)}
                     </PriceHightLight>
                   </td>
                   <td>{transaction.category}</td>
-                  <td>{transaction.createdAt}</td>
+                  {/* Created at vem como string da API, converte para data para formatar */}
+                  <td>{dateFormatter.format( new Date(transaction.createdAt))}</td>
                 </tr>
               );
             })}
